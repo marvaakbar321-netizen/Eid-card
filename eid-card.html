@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid ul Fitr 2026 Mubarak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #0d3d24 0%, #1a5c38 40%, #0a3320 100%);
+            font-family: 'Scheherazade New', serif;
+            overflow: hidden;
+            perspective: 2000px;
+        }
+
+        /* Ambient Glow Background */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(201, 162, 39, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: particleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { 
+                opacity: 0; 
+                transform: translateY(0) scale(0); 
+            }
+            20% { 
+                opacity: 1; 
+                transform: translateY(-20px) scale(1); 
+            }
+            80% { 
+                opacity: 0.5; 
+                transform: translateY(-80px) scale(0.5); 
+            }
+        }
+
+        /* Main Card Scene */
+        .card-scene {
+            position: relative;
+            width: 440px;
+            height: 620px;
+            transform-style: preserve-3d;
+            transform: rotateX(3deg);
+            cursor: pointer;
+        }
+
+        /* Outer Card - Back Panel (Left side) */
+        .outer-card-left {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: linear-gradient(135deg, #1a5c38 0%, #0d3d24 50%, #0a3320 100%);
+            border-radius: 15px 0 0 15px;
+            transform-origin: left center;
+            transform: rotateY(0deg);
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 
+                -8px 0 20px rgba(0, 0, 0, 0.3),
+                inset -2px 0 10px rgba(255, 255, 255, 0.05);
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .outer-card-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #c9a227, #ffd700, #c9a227);
+        }
+
+        /* Outer Card - Right Panel */
+        .outer-card-right {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background: linear-gradient(225deg, #1a5c38 0%, #0d3d24 50%, #0a3320 100%);
+            border-radius: 0 15px 15px 0;
+            transform-origin: right center;
+            transform: rotateY(0deg);
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 
+                8px 0 20px rgba(0, 0, 0, 0.3),
+                inset 2px 0 10px rgba(255, 255, 255, 0.05);
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .outer-card-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #c9a227, #ffd700, #c9a227);
+        }
+
+        /* Gold trim on outer cards */
+        .outer-card-left::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 10px;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a227, transparent);
+        }
+
+        .outer-card-right::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a227);
+        }
+
+        /* Hanging Lanterns on Outer Card */
+        .lanterns-container {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 30px;
+            z-index: 20;
+            transform: translateZ(5px);
+        }
+
+        .hanging-lantern {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: lanternSwing 3s ease-in-out infinite;
+        }
+
+        .hanging-lantern:nth-child(2) { animation-delay: 0.5s; }
+        .hanging-lantern:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes lanternSwing {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .lantern-string {
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, #8b7355, #c9a227);
+        }
+
+        .lantern-fanous {
+            width: 22px;
+            height: 30px;
+            position: relative;
+        }
+
+        .lantern-top {
+            width: 16px;
+            height: 8px;
+            background: linear-gradient(180deg, #c9a227, #8b6914);
+            border-radius: 3px 3px 0 0;
+            margin: 0 auto;
+        }
+
+        .lantern-body-glow {
+            width: 22px;
+            height: 18px;
+            background: linear-gradient(180deg, #e74c3c, #c0392b);
+            border-radius: 2px;
+            box-shadow: 
+                0 0 15px rgba(231, 76, 60, 0.7),
+                0 0 30px rgba(231, 76, 60, 0.4),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: lanternPulse 2s ease-in-out infinite;
+        }
+
+        .lantern-body-glow::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 8px;
+            background: rgba(255, 255, 220, 0.9);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 255, 200, 0.8);
+        }
+
+        .hanging-lantern:nth-child(2) .lantern-body-glow {
+            background: linear-gradient(180deg, #f39c12, #d68910);
+            box-shadow: 
+                0 0 15px rgba(243, 156, 18, 0.7),
+                0 0 30px rgba(243, 156, 18, 0.4),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hanging-lantern:nth-child(3) .lantern-body-glow {
+            background: linear-gradient(180deg, #27ae60, #1e8449);
+            box-shadow: 
+                0 0 15px rgba(39, 174, 96, 0.7),
+                0 0 30px rgba(39, 174, 96, 0.4),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes lanternPulse {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .lantern-bottom {
+            width: 14px;
+            height: 6px;
+            background: linear-gradient(180deg, #8b6914, #c9a227);
+            border-radius: 0 0 3px 3px;
+            margin: 0 auto;
+        }
+
+        /* Inner Card (Greeting Card) */
+        .inner-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateZ(0px);
+            width: 360px;
+            height: 540px;
+            background: linear-gradient(160deg, #ffffff 0%, #fdfbf7 20%, #faf6eb 80%, #f5f0e0 100%);
+            border-radius: 10px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(201, 162, 39, 0.3),
+                0 10px 30px rgba(26, 92, 50, 0.15);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 35px 30px;
+            opacity: 0;
+        }
+
+        /* Inner card opening animation */
+        .card-scene:hover .outer-card-left,
+        .card-scene.open .outer-card-left {
+            transform: rotateY(-80deg);
+        }
+
+        .card-scene:hover .outer-card-right,
+        .card-scene.open .outer-card-right {
+            transform: rotateY(80deg);
+        }
+
+        .card-scene:hover .inner-card,
+        .card-scene.open .inner-card {
+            transform: translate(-50%, -50%) translateZ(100px);
+            opacity: 1;
+            box-shadow: 
+                0 50px 80px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(201, 162, 39, 0.3),
+                0 25px 60px rgba(26, 92, 50, 0.25);
+        }
+
+        /* Inner Card Decorative Border */
+        .inner-card::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid rgba(26, 92, 50, 0.2);
+            border-radius: 6px;
+            pointer-events: none;
+        }
+
+        /* Top decorative element on inner card */
+        .inner-card-top-decor {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .decor-line {
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a227, transparent);
+        }
+
+        /* Crescent Moon on Inner Card */
+        .inner-moon {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            width: 35px;
+            height: 35px;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+        }
+
+        .inner-moon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Minimal Stars */
+        .inner-star {
+            position: absolute;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Minimal Flowers in Corners */
+        .corner-flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0.85;
+        }
+
+        .corner-flower.top-left {
+            top: 15px;
+            left: 15px;
+        }
+
+        .corner-flower.top-right {
+            top: 15px;
+            right: 15px;
+        }
+
+        .corner-flower.bottom-left {
+            bottom: 15px;
+            left: 15px;
+        }
+
+        .corner-flower.bottom-right {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        /* Main Greeting Text */
+        .greeting-container {
+            text-align: center;
+            margin-top: 20px;
+            z-index: 10;
+        }
+
+        .greeting-container h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #1a5c32;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .greeting-container .year {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #c9a227;
+            letter-spacing: 6px;
+            text-shadow: 0 0 15px rgba(201, 162, 39, 0.4);
+            display: block;
+            margin: 8px 0;
+        }
+
+        .greeting-container .mubarak {
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            color: #2d7a4a;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Decorative divider */
+        .text-divider {
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a227, transparent);
+            margin: 12px auto;
+        }
+
+        /* Personal Letter Section */
+        .personal-letter {
+            margin-top: 12px;
+            padding: 12px 15px;
+            text-align: center;
+            max-width: 290px;
+        }
+
+        .personal-letter p {
+            font-family: 'Scheherazade New', serif;
+            font-size: 13px;
+            color: #3d5a45;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .personal-letter .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 16px;
+            color: #1a5c32;
+            margin-top: 8px;
+        }
+
+        .personal-letter .hearts {
+            color: #c9a227;
+            font-size: 11px;
+            margin-top: 4px;
+            letter-spacing: 3px;
+        }
+
+        /* Bottom decoration */
+        .bottom-floral {
+            position: absolute;
+            bottom: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Click hint */
+        .click-hint {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: hintPulse 2s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Card shadow on open */
+        .card-shadow {
+            position: absolute;
+            bottom: -20px;
+            left: 10%;
+            width: 80%;
+            height: 30px;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+            filter: blur(10px);
+            transition: all 1.5s ease;
+            z-index: 1;
+        }
+
+        .card-scene:hover .card-shadow {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card-scene {
+                width: 360px;
+                height: 580px;
+            }
+
+            .inner-card {
+                width: 320px;
+                height: 500px;
+                padding: 25px 20px;
+            }
+
+            .greeting-container h1 {
+                font-size: 32px;
+            }
+
+            .greeting-container .year {
+                font-size: 18px;
+            }
+
+            .greeting-container .mubarak {
+                font-size: 24px;
+            }
+
+            .personal-letter {
+                padding: 10px 12px;
+                max-width: 260px;
+            }
+
+            .personal-letter p {
+                font-size: 11px;
+            }
+
+            .lanterns-container {
+                padding: 0 20px;
+            }
+
+            .lantern-fanous {
+                width: 18px;
+                height: 24px;
+            }
+
+            .lantern-body-glow {
+                width: 18px;
+                height: 14px;
+            }
+
+            .lantern-top {
+                width: 12px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ambient Glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Click Hint -->
+    <div class="click-hint">Click to Open</div>
+
+    <!-- Card Scene -->
+    <div class="card-scene" id="cardScene">
+        <!-- Card Shadow -->
+        <div class="card-shadow"></div>
+
+        <!-- Outer Card - Left Panel -->
+        <div class="outer-card-left">
+        </div>
+
+        <!-- Outer Card - Right Panel -->
+        <div class="outer-card-right">
+        </div>
+
+        <!-- Hanging Lanterns -->
+        <div class="lanterns-container">
+            <div class="hanging-lantern">
+                <div class="lantern-string"></div>
+                <div class="lantern-fanous">
+                    <div class="lantern-top"></div>
+                    <div class="lantern-body-glow"></div>
+                    <div class="lantern-bottom"></div>
+                </div>
+            </div>
+            <div class="hanging-lantern">
+                <div class="lantern-string"></div>
+                <div class="lantern-fanous">
+                    <div class="lantern-top"></div>
+                    <div class="lantern-body-glow"></div>
+                    <div class="lantern-bottom"></div>
+                </div>
+            </div>
+            <div class="hanging-lantern">
+                <div class="lantern-string"></div>
+                <div class="lantern-fanous">
+                    <div class="lantern-top"></div>
+                    <div class="lantern-body-glow"></div>
+                    <div class="lantern-bottom"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inner Card (Greeting) -->
+        <div class="inner-card">
+            <!-- Top Decoration -->
+            <div class="inner-card-top-decor">
+                <div class="decor-line"></div>
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="4" fill="#c9a227"/>
+                    <circle cx="10" cy="2" r="2" fill="#ffd700"/>
+                    <circle cx="16" cy="8" r="2" fill="#ffd700"/>
+                    <circle cx="16" cy="14" r="2" fill="#ffd700"/>
+                    <circle cx="10" cy="18" r="2" fill="#ffd700"/>
+                    <circle cx="4" cy="14" r="2" fill="#ffd700"/>
+                    <circle cx="4" cy="8" r="2" fill="#ffd700"/>
+                </svg>
+                <div class="decor-line"></div>
+            </div>
+
+            <!-- Crescent Moon -->
+            <div class="inner-moon">
+                <svg viewBox="0 0 40 40">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffd700"/>
+                            <stop offset="100%" style="stop-color:#c9a227"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="24" cy="20" r="16" fill="url(#goldGrad)"/>
+                    <circle cx="18" cy="16" r="13" fill="#fdfbf7"/>
+                </svg>
+            </div>
+
+            <!-- Minimal Stars -->
+            <div class="inner-star" style="top: 35px; left: 40px;">
+                <svg width="10" height="10" viewBox="0 0 15 15">
+                    <polygon points="7.5,0 9,6 15,6 10.5,10 12,15 7.5,12 3,15 4.5,10 0,6 6,6" fill="#c9a227"/>
+                </svg>
+            </div>
+            <div class="inner-star" style="top: 55px; right: 45px; animation-delay: 0.5s;">
+                <svg width="8" height="8" viewBox="0 0 15 15">
+                    <polygon points="7.5,0 9,6 15,6 10.5,10 12,15 7.5,12 3,15 4.5,10 0,6 6,6" fill="#ffd700"/>
+                </svg>
+            </div>
+
+            <!-- Minimal Flowers in Corners -->
+            <div class="corner-flower top-left">
+                <svg viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="5" fill="#f5deb3"/>
+                    <circle cx="15" cy="6" r="3" fill="#fffacd"/>
+                    <circle cx="22" cy="12" r="3" fill="#f5deb3"/>
+                    <circle cx="22" cy="21" r="3" fill="#fffacd"/>
+                    <circle cx="15" cy="25" r="3" fill="#f5deb3"/>
+                    <circle cx="8" cy="21" r="3" fill="#fffacd"/>
+                    <circle cx="8" cy="12" r="3" fill="#f5deb3"/>
+                    <circle cx="15" cy="15" r="3" fill="#c9a227"/>
+                </svg>
+            </div>
+
+            <div class="corner-flower top-right">
+                <svg viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="5" fill="#deb887"/>
+                    <circle cx="15" cy="6" r="3" fill="#ffe4c4"/>
+                    <circle cx="22" cy="12" r="3" fill="#deb887"/>
+                    <circle cx="22" cy="21" r="3" fill="#ffe4c4"/>
+                    <circle cx="15" cy="25" r="3" fill="#deb887"/>
+                    <circle cx="8" cy="21" r="3" fill="#ffe4c4"/>
+                    <circle cx="8" cy="12" r="3" fill="#deb887"/>
+                    <circle cx="15" cy="15" r="3" fill="#8b6914"/>
+                </svg>
+            </div>
+
+            <div class="corner-flower bottom-left">
+                <svg viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="5" fill="#d2b48c"/>
+                    <circle cx="15" cy="6" r="3" fill="#f5deb3"/>
+                    <circle cx="22" cy="12" r="3" fill="#d2b48c"/>
+                    <circle cx="22" cy="21" r="3" fill="#f5deb3"/>
+                    <circle cx="15" cy="25" r="3" fill="#d2b48c"/>
+                    <circle cx="8" cy="21" r="3" fill="#f5deb3"/>
+                    <circle cx="8" cy="12" r="3" fill="#d2b48c"/>
+                    <circle cx="15" cy="15" r="3" fill="#c9a227"/>
+                </svg>
+            </div>
+
+            <div class="corner-flower bottom-right">
+                <svg viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="5" fill="#f0e68c"/>
+                    <circle cx="15" cy="6" r="3" fill="#fffacd"/>
+                    <circle cx="22" cy="12" r="3" fill="#f0e68c"/>
+                    <circle cx="22" cy="21" r="3" fill="#fffacd"/>
+                    <circle cx="15" cy="25" r="3" fill="#f0e68c"/>
+                    <circle cx="8" cy="21" r="3" fill="#fffacd"/>
+                    <circle cx="8" cy="12" r="3" fill="#f0e68c"/>
+                    <circle cx="15" cy="15" r="3" fill="#8b6914"/>
+                </svg>
+            </div>
+
+            <!-- Main Greeting -->
+            <div class="greeting-container">
+                <h1>Eid ul Fitr</h1>
+                <span class="year">2026</span>
+                <div class="text-divider"></div>
+                <span class="mubarak">Mubarak</span>
+            </div>
+
+            <!-- Personal Letter for Family & Loved Ones -->
+            <div class="personal-letter">
+                <p>May this blessed occasion bring joy, peace, and prosperity to you and your family. Thank you for being part of my life and for your love and support.</p>
+                <p>Wishing you endless happiness and blessings this Eid!</p>
+                <div class="hearts">♥ ♥ ♥</div>
+                <div class="signature">With love always</div>
+            </div>
+
+            <!-- Bottom Floral -->
+            <div class="bottom-floral">
+                <svg width="20" height="20" viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="4" fill="#fffacd"/>
+                    <circle cx="15" cy="8" r="2" fill="#f5deb3"/>
+                    <circle cx="20" cy="13" r="2" fill="#fffacd"/>
+                    <circle cx="20" cy="20" r="2" fill="#f5deb3"/>
+                    <circle cx="15" cy="24" r="2" fill="#fffacd"/>
+                    <circle cx="10" cy="20" r="2" fill="#f5deb3"/>
+                    <circle cx="10" cy="13" r="2" fill="#fffacd"/>
+                    <circle cx="15" cy="15" r="3" fill="#c9a227"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 30 30">
+                    <circle cx="15" cy="15" r="4" fill="#deb887"/>
+                    <circle cx="15" cy="8" r="2" fill="#ffe4c4"/>
+                    <circle cx="20" cy="13" r="2" fill="#deb887"/>
+                    <circle cx="20" cy="20" r="2" fill="#ffe4c4"/>
+                    <circle cx="15" cy="24" r="2" fill="#deb887"/>
+                    <circle cx="10" cy="20" r="2" fill="#ffe4c4"/>
+                    <circle cx="10" cy="13" r="2" fill="#deb887"/>
+                    <circle cx="15" cy="15" r="3" fill="#8b6914"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                particle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Toggle card open/close on click
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            const cardScene = document.getElementById('cardScene');
+            const clickHint = document.querySelector('.click-hint');
+            
+            // Auto-open the card after a short delay
+            setTimeout(function() {
+                cardScene.classList.add('open');
+                clickHint.style.opacity = '0';
+                clickHint.style.transition = 'opacity 0.5s';
+            }, 800);
+            
+            cardScene.addEventListener('click', function() {
+                this.classList.toggle('open');
+                if (this.classList.contains('open')) {
+                    clickHint.style.opacity = '0';
+                    clickHint.style.transition = 'opacity 0.5s';
+                } else {
+                    clickHint.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
